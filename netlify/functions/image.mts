@@ -3,6 +3,8 @@ import type { Context } from "@netlify/functions";
 export default async (req: Request, context: Context) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
+  headers.append("Access-Control-Allow-Origin", "*");
+  headers.append("Access-Control-Allow-Method", "GET");
   return new Response(
     JSON.stringify({
       imageUrl:
